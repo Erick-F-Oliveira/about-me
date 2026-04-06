@@ -34,6 +34,7 @@ const CardProjects = ({ project }) => {
               </li>
             ))}
         </ul>
+        <div className="badge badge-outline">{project.status}</div>
         <div className="mt-6">
           <button className="btn btn-accent btn-block">Conferir</button>
         </div>

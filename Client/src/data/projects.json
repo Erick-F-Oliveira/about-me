@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Projeto 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "technologies": ["React", "Node.js", "Express", "MongoDB"],
+    "private": true,
+    "status": "Em desenvolvimento"
+  },
+  {
+    "title": "Projeto 2",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.2",
+    "technologies": ["Vue.js", "Python", "Django"],
+    "private": false,
+    "status": "Em desenvolvimento"
+  },
+
+  {
+    "title": "Projeto 3",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.3",
+    "technologies": ["Vue.js", "Python", "Django"],
+    "private": false,
+    "status": "Em produção"
+  }
+]

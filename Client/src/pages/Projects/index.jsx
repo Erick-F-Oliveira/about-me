@@ -1,27 +1,7 @@
 import CardProjects from "../../components/CardProjects";
+import dataProjects from "../../data/projects.json";
 const Projects = () => {
-      const projects = [
-            {
-                  title: "Projeto 1",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                  technologies: ["React", "Node.js", "Express", "MongoDB"],
-                  private: true,
-                  status: "Em desenvolvimento"
-                  
-            },
-            {
-                  title: "Projeto 2",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.2",
-                  technologies: ["Vue.js", "Python", "Django"],
-                  private: false,
-            },
-            {
-                  title: "Projeto 3",
-                  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.3",
-                   technologies: ["Vue.js", "Python", "Django"],
-                    private: false,
-            }
-      ]
+      const projects = dataProjects;
       return(
          <div className="min-h-screen bg-base-300 py-10 px-4">
      <div className="max-w-6xl mx-auto">
