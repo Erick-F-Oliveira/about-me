@@ -5,25 +5,12 @@ const Header = () => {
         <a className="btn btn-ghost text-xl">Ercik F. O</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 gap-2">
           <li>
-            <details>
-              <summary>Projetos</summary>
-              <ul className="bg-base-100 rounded-t-none p-2">
-                  <li>
-                  <a>Comprar atributos</a>
-                </li>
-                <li>
-                  <a>Itsik</a>
-                </li>
-                <li>
-                  <a>Meu Advento</a>
-                </li>
-              </ul>
-            </details>
+            <a className="btn btn-accent">+Sobre mim</a>
           </li>
           <li>
-            <a>Sobre</a>
+            <a>Projetos</a>
           </li>
           <li>
             <a>Contatos</a>
