@@ -1,8 +1,13 @@
-# Portfólio - Erick Ferreira de Oliveira
+# Erick Ferreira de Oliveira
 
 ## Sobre
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e experiência com desenvolvimento fullstack.
 
+----
+## tecnologias usadas
+### Frontend
+- React + Vite
+- Tailwindcss + daisyUI
 ----
 ## Decisões técnicas
 - Iniciei o projeto com Vite por ter uma compilação mais rapida
