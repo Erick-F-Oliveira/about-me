@@ -1,6 +1,6 @@
 const CardProjects = ({ project }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-lg">
+    <div className="card w-90 bg-base-100 shadow-lg">
       <div className="card-body">
         {project.private === true ? (
           <span className="badge badge-sm badge-warning">Privado</span>
@@ -36,7 +36,7 @@ const CardProjects = ({ project }) => {
         </ul>
         <div className="badge badge-outline">{project.status}</div>
         <div className="mt-6">
-          <button className="btn btn-accent btn-block">Conferir</button>
+          <button className="btn btn-secondary btn-block">Conferir</button>
         </div>
       </div>
     </div>

@@ -1,21 +1,36 @@
+import {Link} from "react-router-dom";
 const Header = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">Ercik F. O</a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Erick F. O
+        </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1 gap-2">
+        <ul className="menu menu-horizontal px-1 gap-4 items-center">
           <li>
-            <a className="btn btn-accent">+Sobre mim</a>
+            <Link to="/about">+Sobre mim</Link>
           </li>
           <li>
-            <a>Projetos</a>
+            <Link to="/projects">Projetos</Link>
           </li>
           <li>
-            <a>Contatos</a>
+            <Link to="/contacts">Contatos</Link>
           </li>
-        </ul>
+         <li>
+    <label className="flex cursor-pointer gap-2 items-center">
+      <span className="label-text">🌙</span>
+      <input
+        type="checkbox"
+        value="emerald"
+        className="toggle theme-controller"
+      />
+      <span className="label-text">☀️</span>
+    </label>
+  </li>
+
+</ul>
       </div>
     </div>
   );
