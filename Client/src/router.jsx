@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import Projects from "./pages/Projects";
+import Board from "./pages/Board";
 
 
 function AppRoutes() {
@@ -11,6 +12,7 @@ function AppRoutes() {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
+          <Route path="/board" element={<Board />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
