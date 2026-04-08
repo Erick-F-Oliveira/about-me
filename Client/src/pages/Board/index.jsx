@@ -1,19 +1,20 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+
 import Player from "../../components/Player";
-import Grid from "../../components/Grid";
+import PathTiles from "../../components/PathTiles";
 
 const Board = () => {
   return (
     <div style={{ height: "100vh" }}>
-      <Canvas camera={{ position: [5, 5, 5] }}>
+      <Canvas camera={{ position: [0, 6, 5] }}>
         <ambientLight />
         <directionalLight position={[5, 10, 5]} />
 
-        <Grid />
+        <PathTiles />
         <Player />
 
-        <OrbitControls />
+        <OrbitControls makeDefault minDistance={3} maxDistance={15} />
       </Canvas>
     </div>
   );

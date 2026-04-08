@@ -1,15 +1,49 @@
-import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState, useEffect } from "react";
+import { useGLTF } from "@react-three/drei";
+import { path } from "../data/path";
+import CameraFollow from "./CameraFollow";
 
 const Player = () => {
   const { scene } = useGLTF("/models/itsik.glb");
   const ref = useRef();
-  const TILE_SIZE = 1;
 
   const [keys, setKeys] = useState({});
-  const [target, setTarget] = useState([0, 0, 0]);
-  const [moving, setMoving] = useState(false); 
+  const [index, setIndex] = useState(0);
+  const [lastTile, setLastTile] = useState(null);
+  const handleTileEvent = (tileIndex) => {
+    const tile = path[tileIndex];
+    const find = Math.random() < 0.5; // 50% de chance de encontrar algo
+
+    switch (tile.type) {
+      case "loot":
+        if (find === true) {
+          console.log("🎁 ganhou um item!");
+        } else {
+          console.log("nada aconteceu");
+        }
+        break;
+
+      case "enemy":
+        console.log("👾 inimigo apareceu!");
+        break;
+      case "end":
+        console.log("Fim da trilha");
+        break;
+      case "event":
+        console.log("📜 evento especial!");
+        break;
+
+      default:
+        console.log("...nada aconteceu");
+    }
+  };
+  useEffect(() => {
+    if (lastTile !== index) {
+      handleTileEvent(index);
+      setLastTile(index);
+    }
+  }, [lastTile, index]);
 
   useEffect(() => {
     const down = (e) => setKeys((k) => ({ ...k, [e.key]: true }));
@@ -24,56 +58,38 @@ const Player = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (keys["d"] || (keys["ArrowRight"] && index < path.length - 1)) {
+      setIndex((i) => i + 1);
+    }
+    if (keys["a"] || (keys["ArrowLeft"] && index > 0)) {
+      setIndex((i) => i - 1);
+    }
+  }, [keys]);
+
   useFrame(() => {
     if (!ref.current) return;
 
-    const speed = 0.1;
-
-    const [tx, ty, tz] = target;
+    const [tx, , tz] = path[index].pos;
     const pos = ref.current.position;
 
-    // Movimento suave até o target
     const dx = tx - pos.x;
     const dz = tz - pos.z;
 
-    if (Math.abs(dx) > 0.01 || Math.abs(dz) > 0.01) {
-      pos.x += dx * 0.2;
-      pos.z += dz * 0.2;
-    } else {
-      setMoving(false);
-    }
+    pos.x += dx * 0.2;
+    pos.z += dz * 0.2;
 
-    // Só aceita input se não estiver andando
-    if (!moving) {
-      const roundToGrid = (value) => Math.round(value / TILE_SIZE) * TILE_SIZE;
-      if (keys["w"]) {
-        setTarget([pos.x, 0, roundToGrid(pos.z - TILE_SIZE)]);
-        ref.current.rotation.y = Math.PI; // frente
-        setMoving(true);
-      }
-      if (keys["s"]) {
-        setTarget([pos.x, 0, roundToGrid(pos.z + TILE_SIZE)]);
-        ref.current.rotation.y = 0;
-        setMoving(true);
-      }
-      if (keys["a"]) {
-        setTarget([roundToGrid(pos.x - TILE_SIZE), 0, pos.z]);
-        ref.current.rotation.y = Math.PI / 2;
-        setMoving(true);
-      }
-      if (keys["d"]) {
-        setTarget([roundToGrid(pos.x + TILE_SIZE), 0, pos.z]);
-        ref.current.rotation.y = -Math.PI / 2;
-        setMoving(true);
-      }
-    }
+    // rotação
+    if (dx > 0.01) ref.current.rotation.y = -Math.PI * 2;
+    if (dx < -0.01) ref.current.rotation.y = Math.PI;
   });
 
- return (
-  <group ref={ref} position={[0.5, 0.5, 1]}>
-    <primitive object={scene} scale={1} />
-  </group>
-);
-}
+  return (
+    <group ref={ref}>
+      <primitive object={scene} scale={1} position={[0, 0.5, 0]} />
 
+      <CameraFollow target={ref} />
+    </group>
+  );
+};
 export default Player;
