@@ -9,6 +9,8 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e exp
 ### Frontend
 - React + Vite
 - Tailwindcss + daisyUI
+- Rereact-three/fiber.
+- React-three/dei.
 
 ### Backend
 ----
