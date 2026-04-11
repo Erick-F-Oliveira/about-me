@@ -1,4 +1,4 @@
-import  grid  from "../data/grid";
+import grid from "../data/grid";
 
 const GridTiles = ({ onTileClick, selectedTiles }) => {
   return (
@@ -9,13 +9,11 @@ const GridTiles = ({ onTileClick, selectedTiles }) => {
         return (
           <mesh
             key={tile.id}
-            position={tile.pos}
+            position={tile.position}
             onClick={() => isSelectable && onTileClick(tile)}
           >
             <boxGeometry args={[1.5, 0.2, 1.5]} />
-            <meshStandardMaterial
-              color={isSelectable ? "green" : "gray"}
-            />
+            <meshStandardMaterial color={isSelectable ? "green" : "gray"} />
           </mesh>
         );
       })}

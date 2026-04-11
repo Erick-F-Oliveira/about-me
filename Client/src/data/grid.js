@@ -10,7 +10,7 @@ for (let z = 0; z < rows; z++) {
   for (let x = 0; x < cols; x++) {
     grid.push({
       id: id++,
-      pos: [x * spacing, 0, z * spacing],
+      position: [x * spacing, 0, z * spacing],
       gridX: x,
       gridZ: z,
       type: "empty",

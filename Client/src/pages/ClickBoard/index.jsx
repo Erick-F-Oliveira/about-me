@@ -14,10 +14,14 @@ const ClickBoard = () => {
     steps: 0, // resultado do dado (quantas casas anda)
   });
 
+  const [showPlayerInfo, setShowPlayerInfo] = useState(false);
   const [hasRolled, setHasRolled] = useState(false);
   const [rolling, setRolling] = useState(false);
   const [currentTile, setCurrentTile] = useState(0);
   const [diceValue, setDiceValue] = useState(null);
+  if (showPlayerInfo) {
+    console.log("Player2: 100 de pv ");
+  }
   const rollDice = () => {
     if (rolling || hasRolled) return;
 
@@ -77,9 +81,30 @@ const ClickBoard = () => {
           selectedTiles={selectableTiles}
         />
 
-        <Player currentTile={player.position} />
+        <Player
+          currentTile={player.position}
+          onHover={() => setShowPlayerInfo(true)}
+          onUnhover={() => setShowPlayerInfo(false)}
+        />
         <OrbitControls makeDefault minDistance={5} maxDistance={25} />
       </Canvas>
+      {/* UI HTML FORA do Canvas! */}
+      {showPlayerInfo && (
+        <div
+          className="stats shadow"
+          style={{
+            position: "absolute",
+            bottom: 100,
+            left: 20,
+          }}
+        >
+          <div className="stat">
+            <div className="stat-title">{player.name}</div>
+            <div className="stat-value">🎲 {diceValue ?? "-"}</div>
+            <div className="stat-desc">📍 Tile {player.position}</div>
+          </div>
+        </div>
+      )}
       <button
         className={`btn btn-circle btn-lg ${
           rolling ? "btn-disabled" : hasRolled ? "btn-neutral" : "btn-success"
