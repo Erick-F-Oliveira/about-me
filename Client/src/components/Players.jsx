@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import grid from "../data/grid";
 import colors from "../data/colors.json";
 
-const Player2 = ({ currentTile, color, player, playerName }) => {
+const Players = ({ currentTile, color, player}) => {
   const [showPlayerInfo, setShowPlayerInfo] = useState(false);
-  if (showPlayerInfo) console.log("Player2: é um mano ");
+  if (showPlayerInfo) console.log("Players: é um mano ");
 
   const ref = useRef();
 
@@ -18,9 +18,9 @@ const Player2 = ({ currentTile, color, player, playerName }) => {
       }
     >
       <boxGeometry args={[0.8, 0.7, 0.8]} />
-      <meshStandardMaterial color={color} />
+      <meshStandardMaterial color={player.color} />
     </mesh>
   );
 };
 
-export default Player2;
+export default Players;

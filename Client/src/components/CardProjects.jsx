@@ -12,7 +12,7 @@ const CardProjects = ({ project }) => {
         </div>
         <span>{project.description}</span>
         <ul className="mt-6 flex flex-col gap-2 text-sm">
-          <li>Tecnologias</li>
+          <li>Tecnologias principais:</li>
           {project.technologies &&
             project.technologies.map((tech, index) => (
               <li key={index}>
@@ -36,7 +36,9 @@ const CardProjects = ({ project }) => {
         </ul>
         <div className="badge badge-outline">{project.status}</div>
         <div className="mt-6">
-          <button className="btn btn-secondary btn-block">Conferir</button>
+          <a href={project.link} className="btn btn-secondary btn-block">
+            Conferir
+          </a>
         </div>
       </div>
     </div>

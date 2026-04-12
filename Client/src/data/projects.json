@@ -1,24 +1,44 @@
 [
   {
-    "title": "Projeto 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "technologies": ["React", "Node.js", "Express", "MongoDB"],
+    "title": "Jogo de Tabuleiro",
+    "description": "Um jogo de cartas e tabuleiro desenvolvido com React e Three.js, onde os jogadores coloboram para montarem os tres tipos de baralhos, e depois se enfrentam para coletarem os cristais em campo.",
+    "technologies": ["React","Vite", "Three.js", "Node.js", "Express", "MongoDB"],
     "private": true,
-    "status": "Em desenvolvimento"
+    "status": "Em desenvolvimento",
+    "link":"/clickboard"
   },
   {
-    "title": "Projeto 2",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.2",
-    "technologies": ["Vue.js", "Python", "Django"],
+    "title": "TormentAPI",
+    "description": "API de fã para consulta de nomes, criaturas, locais e referências do cenário de Tormenta.\nO objetivo é facilitar a busca e indicar onde encontrar as informações nos materiais oficiais.",
+    "technologies": ["React","Vite", "Jsonwebtoken","Node.js", "Express", "MongoDB"],
     "private": false,
-    "status": "Em desenvolvimento"
+    "status": "Em desenvolvimento",
+    "link":"https://github.com/Erick-F-Oliveira/TormentAPI"
+  },
+    {
+    "title": "Itsik",
+    "description": "O bot de miscelânea para Tormenta 20 e para ajudar a engajar os servidores \nCom varias funcionalidades, como coleta de moedas, busca de itens, tickets de vantagens e muito mais",
+    "technologies": ["Discord.js","Node.js", "Express", "MongoDB"],
+    "private": true,
+    "status": "Em produção",
+    "link":"https://itsik-omega.vercel.app/"
+  },
+  {
+    "title": "Meu Advento",
+    "description": "Um site de advento, onde os usuários podem criar seus próprios calendários de advento, com conteúdos personalizados para cada dia. O site é desenvolvido com Next.js e Django, e conta com uma interface intuitiva e fácil de usar.",
+    "technologies": ["Next.js", "Node.js", "Express", "MongoDB"],
+    "private": true,
+    "status": "Em produção",
+    "link":"https://www.meuadvento.com.br"
   },
 
   {
-    "title": "Projeto 3",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.3",
-    "technologies": ["Vue.js", "Python", "Django"],
+    "title": "Calculadora de Atributos",
+    "description": "Uma calculadora de atributos para o RPG Tormenta20, feita para uns amigos, mas aberta ao publico ",
+    "technologies": ["HTML", "CSS", "JavaScript"],
     "private": false,
-    "status": "Em produção"
+    "status": "Em produção",
+    "link":"https://github.com/Erick-F-Oliveira/calculadora-atributos"
+
   }
 ]
