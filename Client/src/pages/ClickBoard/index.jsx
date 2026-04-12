@@ -2,26 +2,31 @@ import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
 import GridTiles from "../../components/GridTiles";
 import Player from "../../components/Player2";
-import grid from "../../data/grid";
+import grid, { startPositions } from "../../data/grid";
 import { OrbitControls } from "@react-three/drei";
 
 const ClickBoard = () => {
+   
   const [player, setPlayer] = useState({
     id: "p1",
     name: "Player 1",
+    mana: 100,
+    charName: "Mugo",
+    class: "Guerreiro",
+    pv: 10,
+    atq: 5,
+    def: 2,
+    equips: ["Lamina de Baldencur"],
     position: 0,
     diceType: 6, // tipo do dado (d6)
     steps: 0, // resultado do dado (quantas casas anda)
   });
 
-  const [showPlayerInfo, setShowPlayerInfo] = useState(false);
   const [hasRolled, setHasRolled] = useState(false);
   const [rolling, setRolling] = useState(false);
   const [currentTile, setCurrentTile] = useState(0);
   const [diceValue, setDiceValue] = useState(null);
-  if (showPlayerInfo) {
-    console.log("Player2: 100 de pv ");
-  }
+
   const rollDice = () => {
     if (rolling || hasRolled) return;
 
@@ -81,30 +86,34 @@ const ClickBoard = () => {
           selectedTiles={selectableTiles}
         />
 
-        <Player
-          currentTile={player.position}
-          onHover={() => setShowPlayerInfo(true)}
-          onUnhover={() => setShowPlayerInfo(false)}
-        />
+        <Player currentTile={player.position} player={player} />
         <OrbitControls makeDefault minDistance={5} maxDistance={25} />
       </Canvas>
-      {/* UI HTML FORA do Canvas! */}
-      {showPlayerInfo && (
-        <div
-          className="stats shadow"
-          style={{
-            position: "absolute",
-            bottom: 100,
-            left: 20,
-          }}
-        >
-          <div className="stat">
-            <div className="stat-title">{player.name}</div>
-            <div className="stat-value">🎲 {diceValue ?? "-"}</div>
-            <div className="stat-desc">📍 Tile {player.position}</div>
-          </div>
+
+      <dialog
+        id={`modalPlayer-${player.id}`}
+        className="modal modal-bottom sm:modal-middle"
+      >
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">
+            {player.charName}({player.name}) 
+          </h3>
+          <p className="py-4">
+            Classe: {player.class}
+            <br />
+            PV: {player.pv}
+            <br />
+            ATQ: {player.atq}
+            <br />
+            DEF: {player.def}
+            <br />
+            Equipamentos: {player.equips}
+          </p>
         </div>
-      )}
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
       <button
         className={`btn btn-circle btn-lg ${
           rolling ? "btn-disabled" : hasRolled ? "btn-neutral" : "btn-success"

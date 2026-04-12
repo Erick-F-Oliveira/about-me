@@ -1,0 +1,62 @@
+[
+  {
+    "id": "p001",
+    "name": "Player 1",
+    "mana": 200,
+    "charName": "Mugo",
+    "class": "Guerreiro",
+    "pv": 10,
+    "atq": 5,
+    "def": 2,
+    "equips": ["Lamina de Baldencur"],
+    "position": 0,
+    "diceType": 6,
+    "steps": 0,
+    "color": "green"
+  },
+  {
+    "id": "p002",
+    "name": "Player 2",
+    "mana": 200,
+    "charName": "frium",
+    "class": "Mago",
+    "pv": 8,
+    "atq": 7,
+    "def": 2,
+    "equips": ["Cajado de Netevi"],
+    "position": 0,
+    "diceType": 6,
+    "steps": 0,
+    "color": "blue"
+  },
+  {
+    "id": "p003",
+    "name": "Player 3",
+    "mana": 200,
+    "charName": "Grogo",
+    "class": "Arqueiro",
+    "pv": 20,
+    "atq": 4,
+    "def": 3,
+    "equips": [],
+    "position": 0,
+    "diceType": 6,
+    "steps": 0,
+    "color": "red"
+  },
+  {
+    "id": "p004",
+    "name": "Player 4",
+    "mana": 200,
+    "charName": "Aleria",
+    "class": "Clerigo",
+    "pv": 15,
+    "atq": 3,
+    "def": 5,
+    "equips": [],
+    "position": 0,
+    "diceType": 6,
+    "steps": 0,
+    "color": "yellow"
+  }
+]
