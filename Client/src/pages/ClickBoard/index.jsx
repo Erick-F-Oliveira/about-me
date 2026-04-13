@@ -30,11 +30,11 @@ const ClickBoard = () => {
       const value = Math.floor(Math.random() * currentPlayer.diceType) + 1;
 
       setPlayers((prevPlayers) => {
-        const updated = [...prevPlayers]; 
+        const updated = [...prevPlayers];
         updated[currentPlayerIndex] = {
           ...currentPlayer,
         };
-        return updated; 
+        return updated;
       });
       setDiceValue(value);
       setRolling(false);
@@ -88,7 +88,7 @@ const ClickBoard = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-      <Canvas camera={{ position: [138, 50, 0] }}>
+      <Canvas camera={{ position: [0, 30, 12], fov: 60 }}>
         <ambientLight />
         <directionalLight position={[5, 10, 5]} />
 
@@ -104,7 +104,12 @@ const ClickBoard = () => {
             player={player}
           />
         ))}
-        <OrbitControls makeDefault minDistance={4} maxDistance={25} />
+        <OrbitControls
+          makeDefault
+          minDistance={5}
+          maxDistance={30}
+          target={[12, 0, 12]}
+        />
       </Canvas>
 
       {players.map((player) => (
