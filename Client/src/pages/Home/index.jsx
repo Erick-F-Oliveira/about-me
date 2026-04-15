@@ -7,8 +7,8 @@ const Home = () => {
           className="max-w-sm rounded-lg shadow-2xl"
         />
         <div>
-          <h1 className="text-5xl font-bold">Oi oi, aqui é Erick</h1>
-          <p className="py-6">
+          <h1 className="text-5xl font-bold">Oi oi, aqui é o Erick</h1>
+          <p className="py-6 text-lg">
             Sou desenvolvedor full-stack usando a linguagem JavaScript, e estou
             sempre em busca de novos desafios e oportunidades para crescer
             profissionalmente. Tenho experiência em desenvolvimento web,
