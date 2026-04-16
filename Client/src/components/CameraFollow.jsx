@@ -17,7 +17,6 @@ const CameraFollow = ({ target }) => {
     // move câmera suavemente
     camera.position.lerp(desiredPosition, 0.1);
 
-    // 👇 move o foco (isso resolve tudo)
     controls.target.lerp(playerPos, 0.1);
     controls.update();
   });

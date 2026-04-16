@@ -36,7 +36,12 @@ const CardProjects = ({ project }) => {
         </ul>
         <div className="badge badge-outline">{project.status}</div>
         <div className="mt-6">
-          <a href={project.link} className="btn btn-secondary btn-block">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary btn-block"
+          >
             Conferir
           </a>
         </div>
