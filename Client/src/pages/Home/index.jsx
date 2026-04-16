@@ -12,10 +12,9 @@ const Home = () => {
             Sou desenvolvedor full-stack usando a linguagem JavaScript, e estou
             sempre em busca de novos desafios e oportunidades para crescer
             profissionalmente. Tenho experiência em desenvolvimento web,
-            utilizando tecnologias como React, Node.js e Express. Além de terum
+            utilizando tecnologias como React, Node.js e Express. Além de ter uma
             paixão por RPG (como poderá ver nos meus projetos), também sou um
-            entusiasta de tecnologia e inovação. Estou sempre disposto a
-            aprender e colaborar em projetos.
+            entusiasta de tecnologia e inovação. 
           </p>
 
           <button className="btn btn-primary">Bora lá</button>
