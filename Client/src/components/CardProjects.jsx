@@ -42,7 +42,7 @@ const CardProjects = ({ project }) => {
             rel="noopener noreferrer"
             className="btn btn-secondary btn-block"
           >
-            Conferir
+            Conferir ↗
           </a>
         </div>
       </div>
