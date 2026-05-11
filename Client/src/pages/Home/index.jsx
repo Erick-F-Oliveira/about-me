@@ -1,3 +1,4 @@
+
 const Home = () => {
   return (
     <div className="hero bg-base-300 min-h-screen">
