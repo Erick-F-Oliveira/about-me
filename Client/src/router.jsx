@@ -5,7 +5,7 @@ import Layout from "./pages/Layout";
 import Projects from "./pages/Projects";
 import Board from "./pages/Board";
 import ClickBoard from "./pages/ClickBoard";
-import Globe from "./pages/Globe";
+
 
 
 function AppRoutes() {
@@ -14,8 +14,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-          <Route path="/globe" element={<Globe />}></Route>
+          <Route path="*" element={<NotFound />}></Route>          
           <Route path="/projects" element={<Projects />}></Route>
           <Route path="/board" element={<Board />}></Route>
           <Route path="/clickboard" element={<ClickBoard />}></Route>
